@@ -1,0 +1,1655 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Two-Column Layout with CKEditor and Display</title>
+  <!-- <script src="https://cdn.ckeditor.com/4.19.1/standard/ckeditor.js"></script> -->
+  <script src="ckeditor/ckeditor.js"></script>
+  <script src="js/spectrum/spectrum.js"></script>
+  <script src="js/justify/plugin.js"></script>
+  <!-- <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"> -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/5.3.0/css/bootstrap.min.css">
+  <link rel="stylesheet" type="text/css" href="style.css">
+</head>
+<body>
+  <div class="main-box">
+    <ul class="nav nav-tabs">
+        <li class="nav-item">
+          <a class="nav-link active" data-bs-toggle="tab" href="#hoa-don-ban-hang">Hóa Đơn Bán Hàng</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" data-bs-toggle="tab" href="#phieu-giao-hang">Phiếu Giao Hàng</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" data-bs-toggle="tab" href="#hoa-don-tra-hang">Hóa Đơn Trả Hàng</a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link" data-bs-toggle="tab" href="#hoa-don-doi-tra-hang">Hóa Đơn Đổi Trả Hàng</a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link" data-bs-toggle="tab" href="#phieu-nhap-hang">Phiếu Nhập Hàng</a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link" data-bs-toggle="tab" href="#tra-hang-nhap">Trả Hàng Nhập</a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link" data-bs-toggle="tab" href="#phieu-chuyen-hang">Phiếu Chuyển Hàng</a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link" data-bs-toggle="tab" href="#phieu-chi">Phiếu Chi</a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link" data-bs-toggle="tab" href="#phieu-thu">Phiếu Thu</a>
+        </li>
+    </ul>
+    <div class="tab-content">
+        <div id="hoa-don-ban-hang" class="tab-pane fade show active">
+            <div class="row">
+                <div class="col-md-6">
+                  <textarea id="editor_hoa_don_ban_hang" name="editor_hoa_don_ban_hang">
+                      <div id="">
+                          <div class="printBox">
+                          <table style="width:100%">
+                              <tbody>
+                                  <tr>
+                                      <td style="text-align:center">
+                                      <table style="width:100%">
+                                          <tbody>
+                                              <tr>
+                                                  <td style="font-size:11px; text-align:center">{Logo_Cua_Hang}</td>
+                                              </tr>
+                                              <tr>
+                                                  <td style="font-size:11px; text-align:center"><strong style="font-size:11px">{Ten_Cua_Hang}</strong></td>
+                                              </tr>
+                                              <tr>
+                                                  <td style="font-size:11px; text-align:center">Địa chỉ: {Dia_Chi_Chi_Nhanh} - {Phuong_Xa_Chi_Nhanh} - {Khu_Vuc_Chi_Nhanh_QH_TP}</td>
+                                              </tr>
+                                              <tr>
+                                                  <td style="font-size:11px; text-align:center">Điện thoại: {Dien_Thoai_Chi_Nhanh}</td>
+                                              </tr>
+                                          </tbody>
+                                      </table>
+                                      </td>
+                                  </tr>
+                              </tbody>
+                          </table>
+                          
+                          <div style="padding:10px 0 0; text-align:center"><strong style="font-size:12px">{HOA_DON_BAN_HANG}</strong></div>
+                          
+                          <table style="width:100%">
+                              <tbody>
+                                  <tr>
+                                      <td style="font-size:11px; text-align:center">Số HĐ: {Ma_Don_Hang}</td>
+                                  </tr>
+                                  <tr>
+                                      <td style="font-size:11px; text-align:center">Ngày {Ngay} tháng {Thang} năm {Nam}</td>
+                                  </tr>
+                              </tbody>
+                          </table>
+                          
+                          <table style="margin:10px 0 15px; width:100%">
+                              <tbody>
+                                  <tr>
+                                      <td style="font-size:11px">Khách hàng: {Khach_Hang}</td>
+                                  </tr>
+                                  <tr>
+                                      <td style="font-size:11px">SĐT: {So_Dien_Thoai}</td>
+                                  </tr>
+                                  <tr>
+                                      <td style="font-size:11px">Địa chỉ: {Dia_Chi_Khach_Hang} - {Phuong_Xa_Khach_Hang} - {Khu_Vuc_Khach_Hang_QH_TP}</td>
+                                  </tr>
+                              </tbody>
+                          </table>
+                          
+                          <table cellpadding="3" style="width:98%">
+                              <tbody>
+                                  <tr>
+                                      <td style="border-bottom:1px solid black; border-top:1px solid black; width:35%"><strong><span style="font-size:11px">Đơn giá</span></strong></td>
+                                      <td style="border-bottom:1px solid black; border-top:1px solid black; text-align:right; width:30%"><strong><span style="font-size:11px">SL</span></strong></td>
+                                      <td style="border-bottom:1px solid black; border-top:1px solid black; text-align:right"><strong><span style="font-size:11px">Thành tiền</span></strong></td>
+                                  </tr>
+                                  <tr>
+                                      <td colspan="3" style="padding-top:3px"><span style="font-size:12px">{Ten_Hang_Hoa}</span></td>
+                                  </tr>
+                                  <tr>
+                                      <td style="border-bottom:1px dashed black"><span style="font-size:11px">{Don_Gia_Chiet_Khau}</span></td>
+                                      <td style="border-bottom:1px dashed black; text-align:right"><span style="font-size:11px">{So_Luong}</span></td>
+                                      <td style="border-bottom:1px dashed black; text-align:right"><span style="font-size:11px">{Thanh_Tien}</span></td>
+                                  </tr>
+                              </tbody>
+                          </table>
+                          
+                          <table border="0" cellpadding="3" cellspacing="0" style="border-collapse:collapse; margin-top:20px; width:98%">
+                              <tfoot>
+                                  <tr>
+                                      <td style="font-size:11px; font-weight:bold; text-align:right; white-space:nowrap">Tổng tiền hàng:</td>
+                                      <td style="font-size:11px; font-weight:bold; text-align:right">{Tong_Tien_Hang}</td>
+                                  </tr>
+                                  <tr>
+                                      <td style="font-size:11px; font-weight:bold; text-align:right; white-space:nowrap">Chiết khấu {Chiet_Khau_Hoa_Don_Phan_Tram}:</td>
+                                      <td style="font-size:11px; font-weight:bold; text-align:right">{Chiet_Khau_Hoa_Don}</td>
+                                  </tr>
+                                  <tr>
+                                      <td style="font-size:11px; font-weight:bold; text-align:right; white-space:nowrap">Tổng thanh toán:</td>
+                                      <td style="font-size:11px; font-weight:bold; text-align:right">{Tong_Cong}</td>
+                                  </tr>
+                                  <tr>
+                                      <td colspan="2" style="font-size:11px; font-style:italic; text-align:left">({Tong_Cong_Bang_Chu})</td>
+                                  </tr>
+                                  <tr>
+                                      <td colspan="2" style="font-size:11px; font-weight:bold; text-align:center">{Ma_QR}</td>
+                                  </tr>
+                              </tfoot>
+                          </table>
+                          
+                          <table style="margin-top:20px; width:100%">
+                              <tbody>
+                                  <tr>
+                                      <td style="font-size:11px; font-style:italic; text-align:center">Cảm ơn và hẹn gặp lại!</td>
+                                  </tr>
+                                  <tr>
+                                      <td style="font-size:9px; font-style:italic; text-align:center">Powered by KIOTVIET.</td>
+                                  </tr>
+                              </tbody>
+                          </table>
+                          </div>
+                          </div>
+                  </textarea>
+                </div>
+                <div class="col-md-6">
+                  <div id="display"></div>
+                </div>
+            </div>
+        </div>
+        <div id="phieu-giao-hang" class="tab-pane fade">
+            <div class="row">
+                <div class="col-md-6" style="height: 800px;">
+                  <textarea id="editor_phieu_giao_hang" name="editor_phieu_giao_hang" style="height: 100%;">
+                        <div id="kv-cke-temp">
+                            <div class="printBox">&nbsp;
+                                <table style="width:100%">
+                                    <tbody>
+                                        <tr>
+                                            <td style="text-align:center">
+                                            <table style="width:100%">
+                                                <tbody>
+                                                    <tr>
+                                                        <td style="font-size:13px; font-weight:bold; margin-bottom:10px; text-align:center">{Logo_Cua_Hang}</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td style="font-size:20px; font-weight:bold; text-align:center">PHIẾU GIAO HÀNG</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td style="font-size:11px; margin-bottom:10px; text-align:center">Mã hóa đơn: {Ma_Don_Hang}</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td style="font-size:15px; font-weight:bold; margin-bottom:10px; text-align:center">{Ma_Van_Don_Ma_Vach}</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td style="font-size:11px; margin-bottom:5px; text-align:center">Mã vận đơn: <strong style="font-weight:bold">{Ma_Van_Don}</strong></td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td style="font-size:20px; margin-bottom:5px; text-align:center"><strong style="font-weight:bold">{Sort_Code}</strong></td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td style="font-size:11px; text-align:center">Đơn vị giao hàng: {Doi_Tac_Giao_Hang}</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td style="font-size:11px; text-align:center">Dịch vụ: {Loai_Dich_Vu}</td>
+                                                    </tr>
+                                                </tbody>
+                                            </table>
+                                            </td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                                
+                                <table style="margin:10px 0 15px; width:100%">
+                                    <tbody>
+                                        <tr>
+                                            <td style="font-size:11px"><strong><u>Người gửi:</u> {Ten_Cua_Hang} - {Dien_Thoai_Chi_Nhanh}</strong></td>
+                                        </tr>
+                                        <tr>
+                                            <td style="font-size:11px">{Dia_Chi_Chi_Nhanh},{Phuong_Xa_Chi_Nhanh}</td>
+                                        </tr>
+                                        <tr>
+                                            <td style="font-size:11px; margin-bottom:10px">{Khu_Vuc_Chi_Nhanh_QH_TP}</td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                                
+                                <table style="margin:10px 0 15px; width:100%">
+                                    <tbody>
+                                        <tr>
+                                            <td style="font-size:11px"><strong><u>Người nhận:</u> {Khach_Hang} - {So_Dien_Thoai}</strong></td>
+                                        </tr>
+                                        <tr>
+                                            <td style="font-size:11px">{Dia_Chi_Giao_Hang},{Phuong_Xa_Giao_Hang}</td>
+                                        </tr>
+                                        <tr>
+                                            <td style="font-size:11px; margin-bottom:10px">{Khu_Vuc_Giao_Hang_QH_TP}</td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                                
+                                <table style="margin:10px 0 15px; width:100%">
+                                    <tbody>
+                                        <tr>
+                                            <td style="font-size:11px; font-weight:bold"><u>Tổng thu người nhân:</u> <span style="font-size:18px">{Thu_Tu_Nguoi_Nhan} VND</span></td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                                
+                                <table>
+                                    <tbody>
+                                        <tr style="vertical-align:top">
+                                            <td style="font-size:11px; min-width:120px"><strong><u>Lưu ý khi giao hàng:</u> </strong></td>
+                                            <td style="font-size:11px"><strong>{Luu_Y_Khi_Phat}</strong></td>
+                                        </tr>
+                                        <tr>
+                                            <td style="min-width:120px">&nbsp;</td>
+                                            <td style="font-size:11px; text-align:justify"><strong>{Ghi_Chu_Giao_Hang}</strong></td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                                
+                                <table>
+                                    <tbody>
+                                        <tr>
+                                            <td style="font-size:11px; font-weight:bold"><u>Thông tin đơn hàng:</u></td>
+                                        </tr>
+                                        <tr>
+                                            <td style="font-size:11px">Khối lượng: {Trong_Luong_Giao_Hang}</td>
+                                        </tr>
+                                        <tr>
+                                            <td style="font-size:11px">Tổng số sản phẩm: {Tong_So_Luong}</td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                                &nbsp;
+                                
+                                <table border="1" cellpadding="3" cellspacing="0" style="border-collapse:collapse; width:98%">
+                                    <tbody>
+                                        <tr>
+                                            <td style="text-align:center"><strong style="font-size:11px">STT</strong></td>
+                                            <td style="text-align:center"><strong style="font-size:11px">Tên hàng</strong></td>
+                                            <td style="text-align:center"><strong style="font-size:11px">SL</strong></td>
+                                        </tr>
+                                        <tr>
+                                            <td style="font-size:11px; text-align:center">{STT}</td>
+                                            <td style="font-size:11px">{Ten_Hang_Hoa}</td>
+                                            <td style="font-size:11px; text-align:center">{So_Luong}</td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                  </textarea>
+                </div>
+                <div class="col-md-6">
+                  <div id="display_phieu_giao_hang"></div>
+                </div>
+            </div>
+        </div>
+        <div id="hoa-don-tra-hang" class="tab-pane fade">
+            <div class="row">
+                <div class="col-md-6">
+                    <textarea id="editor_hoa_don_tra_hang" name="editor_hoa_don_tra_hang">
+                        <div id="kv-cke-temp">
+                            <div class="printBox">
+                                <style type="text/css">table {
+                                    page-break-inside: auto;
+                                    font-size: 11px;
+                                }
+                            
+                                tr {
+                                    page-break-inside: avoid;
+                                    page-break-after: auto
+                                }
+                            </style>
+                            <table style="width:100%">
+                                <tbody>
+                                    <tr>
+                                        <td rowspan="3" width="20%">&nbsp;</td>
+                                        <td>Tên cửa hàng</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Chi nhánh: {Dia_Chi_Chi_Nhanh} - {Phuong_Xa_Chi_Nhanh} - {Khu_Vuc_Chi_Nhanh_QH_TP}</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Điện thoại: {Dien_Thoai_Chi_Nhanh}</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                            &nbsp;
+                            
+                            <div style="border-bottom:1px dashed black">&nbsp;</div>
+                            &nbsp;
+                            
+                            <div>Ngày bán: {Ngay} tháng {Thang} năm {Nam}</div>
+                            &nbsp;
+                            
+                            <div style="text-align:center">
+                            <p><strong><span style="font-size:small">{HOA_DON_TRA_HANG}</span></strong></p>
+                            </div>
+                            
+                            <table style="width:100%">
+                                <tbody>
+                                    <tr>
+                                        <td>Khách hàng: {Khach_Hang}</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Địa chỉ: {Dia_Chi_Khach_Hang} - {Phuong_Xa_Khach_Hang}</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Khu vực: {Khu_Vuc_Khach_Hang_QH_TP}</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Người bán: {Nhan_Vien_Ban_Hang}</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                            &nbsp;
+                            
+                            <div style="border-bottom:1px dashed black">&nbsp;</div>
+                            &nbsp;
+                            
+                            <table style="width:100%">
+                                <tbody>
+                                    <tr>
+                                        <td style="width:35%">Đơn giá</td>
+                                        <td style="text-align:center; width:30%">SL</td>
+                                        <td style="text-align:right">Thành tiền</td>
+                                    </tr>
+                                    <tr>
+                                        <td colspan="3">{Ten_Hang_Hoa}</td>
+                                    </tr>
+                                    <tr>
+                                        <td style="border-bottom:1px dashed black">{Don_Gia}</td>
+                                        <td style="border-bottom:1px dashed black; text-align:center">{So_Luong}</td>
+                                        <td style="border-bottom:1px dashed black; text-align:right">{Thanh_Tien}</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                            
+                            <p>{Ghi_Chu}</p>
+                            
+                            <table style="width:100%">
+                                <tbody>
+                                    <tr>
+                                        <td style="text-align:right" width="80%">Tổng tiền hàng trả:</td>
+                                        <td style="text-align:right">{Tong_Tien_Tra_Hang}</td>
+                                    </tr>
+                                    <tr>
+                                        <td style="text-align:right">Tiền trả khách</td>
+                                        <td style="text-align:right">{Tien_Tra_Khach}</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                            </div>
+                        </div>
+                    </textarea>
+                </div>
+                <div class="col-md-6">
+                    <div id="display_hoa_don_tra_hang"></div>
+                  </div>
+            </div>
+        </div>
+        <div id="hoa-don-doi-tra-hang" class="tab-pane fade">
+            <div class="row">
+                <div class="col-md-6">
+                    <textarea id="editor_hoa_don_doi_tra_hang" name="editor_hoa_don_tra_hang">
+                        <div id="kv-cke-temp">
+                            <style type="text/css">table {
+                                    page-break-inside: auto
+                                }
+                            
+                                tr {
+                                    page-break-inside: avoid;
+                                    page-break-after: auto
+                                }
+                            </style>
+                            <table style="width:100%">
+                                <tbody>
+                                    <tr>
+                                        <td rowspan="3" width="20%">&nbsp;</td>
+                                        <td>Tên cửa hàng</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Chi nhánh: {Chi_Nhanh_Ban_Hang}</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Điện thoại: {Dien_Thoai_Chi_Nhanh}</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                            &nbsp;
+                            
+                            <div style="border-bottom:1px dashed black">&nbsp;</div>
+                            &nbsp;
+                            
+                            <div>Ngày bán: {Ngay_Thang_Nam}</div>
+                            &nbsp;
+                            
+                            <div style="text-align:center">
+                            <p><strong><span style="font-size:small">Hóa Đơn Trả Hàng</span></strong></p>
+                            </div>
+                            
+                            <table style="width:100%">
+                                <tbody>
+                                    <tr>
+                                        <td>Khách hàng: {Khach_Hang}</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Địa chỉ: {Dia_Chi_Khach_Hang}</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Khu vực: {Khu_Vuc_Khach_Hang}</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Người bán: {Nhan_Vien_Ban_Hang}</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                            &nbsp;
+                            
+                            <div style="border-bottom:1px dashed black">&nbsp;</div>
+                            &nbsp;
+                            
+                            <table style="width:100%">
+                                <tbody>
+                                    <tr>
+                                        <td style="width:35%">Đơn giá</td>
+                                        <td style="text-align:center; width:30%">SL</td>
+                                        <td style="text-align:right">Thành tiền</td>
+                                    </tr>
+                                    <tr>
+                                        <td colspan="3">{Ten_Hang_Hoa}</td>
+                                    </tr>
+                                    <tr>
+                                        <td style="border-bottom:1px dashed black">{Don_Gia}</td>
+                                        <td style="border-bottom:1px dashed black; text-align:center">{So_Luong}</td>
+                                        <td style="border-bottom:1px dashed black; text-align:right">{Thanh_Tien}</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                            
+                            <div style="text-align:center">
+                            <p><strong><span style="font-size:small">Mua mới</span></strong></p>
+                            </div>
+                            
+                            <table style="width:100%">
+                                <tbody>
+                                    <tr>
+                                        <td style="width:35%">Đơn giá</td>
+                                        <td style="text-align:center; width:30%">SL</td>
+                                        <td style="text-align:right">Thành tiền</td>
+                                    </tr>
+                                    <tr>
+                                        <td colspan="3">{Ten_Hang_Hoa_Moi}</td>
+                                    </tr>
+                                    <tr>
+                                        <td style="border-bottom:1px dashed black">{Don_Gia_Moi}</td>
+                                        <td style="border-bottom:1px dashed black; text-align:center">{So_Luong_Moi}</td>
+                                        <td style="border-bottom:1px dashed black; text-align:right">{Thanh_Tien_Moi}</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                            
+                            <p>{Ghi_Chu}</p>
+                            
+                            <table style="width:100%">
+                                <tbody>
+                                    <tr>
+                                        <td style="text-align:right" width="80%">Tổng tiền hóa đơn trả:</td>
+                                        <td style="text-align:right">{Tong_Tien_Tra_Hang}</td>
+                                    </tr>
+                                    <tr>
+                                        <td style="text-align:right">Tổng tiền hóa đơn mua:</td>
+                                        <td style="text-align:right">{Tong_Tien_Hoa_Don_Mua}</td>
+                                    </tr>
+                                    <tr>
+                                        <td style="text-align:right">Tổng cộng:</td>
+                                        <td style="text-align:right">{Tong_Cong}</td>
+                                    </tr>
+                                    <tr>
+                                        <td style="text-align:right">Tiền trả khách:</td>
+                                        <td style="text-align:right">{Tien_Tra_Khach}</td>
+                                    </tr>
+                                    <tr>
+                                        <td colspan="2" style="text-align:center">{Ma_QR}</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                            </div>                            
+                    </textarea>
+                </div>
+                <div class="col-md-6">
+                    <div id="display_hoa_don_doi_tra_hang"></div>
+                </div>
+            </div>
+        </div>
+        <div id="phieu-nhap-hang" class="tab-pane fade">
+            <div class="row">
+                <div class="col-md-6">
+                    <textarea id="editor_phieu_nhap_hang" name="editor_phieu_nhap_hang">
+                        <div id="kv-cke-temp">
+                            <style type="text/css">.printBox {
+                                    font-family: Arial, sans-serif;
+                                    font-size: 12px;
+                                }
+                            
+                                .fs18 {
+                                    font-size: 18px;
+                                }
+                            
+                                .mb20 {
+                                    margin-bottom: 20px;
+                                }
+                            
+                                .mb10 {
+                                    margin-bottom: 10px;
+                                }
+                            
+                                .mb5 {
+                                    margin-bottom: 5px;
+                                }
+                                table {
+                                    page-break-inside: auto
+                                }
+                            
+                                tr {
+                                    page-break-inside: avoid;
+                                    page-break-after: auto
+                                }
+                            </style>
+                            <div class="printBox">
+                            <div class="mb10" style="text-align:center"><strong class="fs18">PHIẾU NHẬP HÀNG</strong></div>
+                            
+                            <div class="mb5" style="text-align:center"><strong>Mã phiếu: {Ma_Nhap_Hang}</strong></div>
+                            
+                            <div class="mb20" style="text-align:center"><em>Ngày: {Ngay_Thang_Nam}</em></div>
+                            
+                            <table class="mb10" style="width:100%">
+                                <tbody>
+                                    <tr>
+                                        <td>Chi nhánh nhập: {Chi_Nhanh_Nhap}</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Người tạo: {Nguoi_Tao}</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Nhà cung cấp: {Nha_Cung_Cap}</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Địa chỉ: {Dia_Chi_Nha_Cung_Cap}</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                            
+                            <table border="1" cellpadding="3" cellspacing="0" class="mb10" style="border-collapse:collapse; width:100%">
+                                <tbody>
+                                    <tr style="font-weight:bold; text-align:center">
+                                        <td style="text-align:right">STT</td>
+                                        <td>Mã hàng</td>
+                                        <td>Tên hàng</td>
+                                        <td style="text-align:right">Đơn giá</td>
+                                        <td style="text-align:right">Số lượng</td>
+                                        <td style="text-align:right">Chiết khấu</td>
+                                        <td style="text-align:right">Thành tiền</td>
+                                    </tr>
+                                    <tr>
+                                        <td style="text-align:right">{STT}</td>
+                                        <td>{Ma_Hang}</td>
+                                        <td>{Ten_Hang_Hoa}</td>
+                                        <td style="text-align:right">{Don_Gia}</td>
+                                        <td style="text-align:right">{So_Luong}</td>
+                                        <td style="text-align:right">{Chiet_Khau}</td>
+                                        <td style="text-align:right">{Thanh_Tien}</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                            
+                            <table border="0" cellpadding="3" cellspacing="0" class="mb20" style="border-collapse:collapse; width:100%">
+                                <tbody>
+                                    <tr>
+                                        <td style="width:33%">&nbsp;</td>
+                                        <td style="width:33%">Tổng số lượng hàng:</td>
+                                        <td style="text-align:right">{Tong_So_Luong_Hang}</td>
+                                    </tr>
+                                    <tr>
+                                        <td>&nbsp;</td>
+                                        <td>Tổng tiền hàng:</td>
+                                        <td style="text-align:right">{Tong_Tien_Hang}</td>
+                                    </tr>
+                                    <tr>
+                                        <td>&nbsp;</td>
+                                        <td>Chiết khấu hóa đơn:</td>
+                                        <td style="text-align:right">{Chiet_Khau_Hoa_Don}</td>
+                                    </tr>
+                                    <tr>
+                                        <td>&nbsp;</td>
+                                        <td>Chi Phí Nhập Hàng</td>
+                                        <td style="text-align:right">{Muc_Chi_Phi_Nhap_Hang}</td>
+                                    </tr>
+                                    <tr>
+                                        <td>&nbsp;</td>
+                                        <td>Tiền cần trả NCC:</td>
+                                        <td style="text-align:right">{Tong_Cong}</td>
+                                    </tr>
+                                    <tr>
+                                        <td>&nbsp;</td>
+                                        <td>Chi Phí Nhập Hàng Khác</td>
+                                        <td style="text-align:right">{Muc_Chi_Phi_Nhap_Hang_Khac}</td>
+                                    </tr>
+                                    <tr>
+                                        <td colspan="3">Ghi chú: {Ghi_Chu}</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                            
+                            <table style="width:100%">
+                                <tbody>
+                                    <tr>
+                                        <td align="center" width="50%"><strong>Nhà cung cấp</strong></td>
+                                        <td align="center" width="50%"><strong>Người lập</strong></td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                            </div>
+                        </div>
+                    </textarea>
+                </div>
+                <div class="col-md-6">
+                    <div id="display_phieu_nhap_hang"></div>
+                </div>
+            </div>
+        </div>
+        <div id="tra-hang-nhap" class="tab-pane fade">
+            <div class="row">
+                <div class="col-md-6">
+                    <textarea id="editor_tra_hang_nhap" name="editor_tra_hang_nhap">
+                        <div id="kv-cke-temp">
+                            <style type="text/css">.printBox {
+                                    font-family: Arial, sans-serif;
+                                    font-size: 12px;
+                                }
+                            
+                                .fs18 { font-size: 18px; }
+                            
+                                .mb20 { margin-bottom: 20px; }
+                            
+                                .mb10 { margin-bottom: 10px; }
+                            
+                                .mb5 { margin-bottom: 5px; }
+                            
+                                .txtC { text-align: center; }
+                            
+                                .txtR { text-align: right; }
+                                table {
+                                    page-break-inside: auto
+                                }
+                            
+                                tr {
+                                    page-break-inside: avoid;
+                                    page-break-after: auto
+                                }
+                            </style>
+                            <div class="printBox">
+                            <div class="mb10" style="text-align:center"><strong class="fs18">TRẢ HÀNG NHẬP</strong></div>
+                            
+                            <div class="mb5" style="text-align:center"><strong>Mã phiếu: {Ma_Tra_Hang_Nhap}</strong></div>
+                            
+                            <div class="mb5" style="text-align:center"><strong>Mã nhập hàng: {Ma_Nhap_Hang}</strong></div>
+                            
+                            <div class="mb20" style="text-align:center"><em>Ngày: {Ngay_Thang_Nam}</em></div>
+                            
+                            <table class="k-table mb10" style="width:100%">
+                                <tbody>
+                                    <tr>
+                                        <td>Địa chỉ chi nhánh: {Dia_Chi_Chi_Nhanh}</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Người tạo: {Nguoi_Tao}</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Nhà cung cấp: {Nha_Cung_Cap}</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Địa chỉ: {Dia_Chi_Nha_Cung_Cap}</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                            
+                            <table border="1" cellpadding="3" cellspacing="0" class="k-table mb10" style="border-collapse:collapse; width:100%">
+                                <tbody>
+                                    <tr style="font-weight:bold; text-align:center">
+                                        <th class="txtC">STT</th>
+                                        <th>Mã hàng</th>
+                                        <th>Tên hàng</th>
+                                        <th style="text-align: right;">SL</th>
+                                        <th style="text-align: right;">Giá nhập</th>
+                                        <th style="text-align: right;">Giá trả lại</th>
+                                        <th style="text-align: right;">Giảm giá trả</th>
+                                        <th style="text-align: right;">Thành tiền</th>
+                                    </tr>
+                                    <tr>
+                                        <td class="txtC">{STT}</td>
+                                        <td>{Ma_Hang}</td>
+                                        <td>{Ten_Hang_Hoa}</td>
+                                        <td style="text-align:right">{So_Luong}</td>
+                                        <td style="text-align:right">{Gia_Nhap}</td>
+                                        <td style="text-align:right">{Don_Gia_Chiet_Khau}</td>
+                                        <td style="text-align:right">{Giam_Gia_Tra_Lai}</td>
+                                        <td style="text-align:right">{Thanh_Tien}</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                            
+                            <table border="0" cellpadding="3" cellspacing="0" class="k-table mb20" style="border-collapse:collapse; width:100%">
+                                <tbody>
+                                    <tr>
+                                        <td colspan="3" style="width:33%"><span style="font-family:Arial,sans-serif">Ghi chú: {Ghi_Chu}</span></td>
+                                    </tr>
+                                    <tr>
+                                        <td style="width:33%">&nbsp;</td>
+                                        <td style="width:33%">Tổng số lượng:</td>
+                                        <td style="text-align:right">{Tong_So_Luong}</td>
+                                    </tr>
+                                    <tr>
+                                        <td style="width:33%">&nbsp;</td>
+                                        <td style="width:33%">Tổng số mặt hàng:</td>
+                                        <td style="text-align:right">{Tong_So_Mat_Hang}</td>
+                                    </tr>
+                                    <tr>
+                                        <td style="width:33%">&nbsp;</td>
+                                        <td style="width:33%">Tổng tiền hàng trả:</td>
+                                        <td style="text-align:right">{Tong_Tien_Hang_Tra}</td>
+                                    </tr>
+                                    <tr>
+                                        <td style="width:33%">&nbsp;</td>
+                                        <td style="width:33%">Giảm giá:</td>
+                                        <td style="text-align:right">{Giam_Gia}</td>
+                                    </tr>
+                                    <tr>
+                                        <td style="width:33%">&nbsp;</td>
+                                        <td style="width:33%">Tiền NCC trả:</td>
+                                        <td style="text-align:right">{Tien_Nha_Cung_Cap_Tra}</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                            
+                            <table cellpadding="0" cellspacing="0" class="k-table txtC" style="width:100%">
+                                <tbody>
+                                    <tr>
+                                        <td class="txtC" style="text-align:center" width="50%"><strong>Nhà cung cấp</strong></td>
+                                        <td class="txtC" style="text-align:center" width="50%"><strong>Người lập</strong></td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                            </div>
+                        </div>
+                    </textarea>
+                </div>
+                <div class="col-md-6">
+                    <div id="display_tra_hang_nhap"></div>
+                </div>
+            </div>
+        </div>
+        <div id="phieu-chuyen-hang" class="tab-pane fade">
+            <div class="row">
+                <div class="col-md-6">
+                    <textarea id="editor_phieu_chuyen_hang" name="editor_phieu_chuyen_hang">
+                        <div id="kv-cke-temp">
+                            <style type="text/css">.printBox {
+                                    font-family: Arial, sans-serif;
+                                    font-size: 12px;
+                                }
+                            
+                                .fs18 {
+                                    font-size: 18px;
+                                }
+                            
+                                .mb20 {
+                                    margin-bottom: 20px;
+                                }
+                            
+                                .mb10 {
+                                    margin-bottom: 10px;
+                                }
+                            
+                                .mb5 {
+                                    margin-bottom: 5px;
+                                }
+                                table {
+                                    page-break-inside: auto
+                                }
+                            
+                                tr {
+                                    page-break-inside: avoid;
+                                    page-break-after: auto
+                                }
+                            </style>
+                            <div class="printBox">
+                            <div class="mb20">{Ten_Cua_Hang}<br />
+                            Địa chỉ:&nbsp;{Dia_Chi_Cua_Hang}<br />
+                            SĐT:&nbsp;{So_Dien_Thoai_Cua_Hang}</div>
+                            
+                            <div class="mb10" style="text-align:center"><strong class="fs18">PHIẾU CHUYỂN HÀNG</strong></div>
+                            
+                            <div class="mb5" style="text-align:center"><strong>Mã phiếu: {Ma_Chuyen_Hang}</strong></div>
+                            
+                            <div class="mb20" style="text-align:center"><em>Ngày chuyển: {Ngay_Thang_Nam_Chuyen}</em></div>
+                            
+                            <table class="mb10" style="width:100%">
+                                <tbody>
+                                    <tr>
+                                        <td>Chi nhánh chuyển: {Chi_Nhanh_Chuyen}</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Người chuyển: {Nguoi_Chuyen}</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Chi nhánh nhận: {Chi_Nhanh_Nhan}</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Người nhận: {Nguoi_Nhan}</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                            
+                            <table border="1" cellpadding="3" cellspacing="0" class="mb10" style="border-collapse:collapse; width:100%">
+                                <tbody>
+                                    <tr style="font-weight:bold; text-align:center">
+                                        <td style="text-align:right">STT</td>
+                                        <td>Mã hàng</td>
+                                        <td>Tên hàng</td>
+                                        <td style="text-align:right">SL chuyển</td>
+                                        <td style="text-align:right">SL nhận</td>
+                                        <td style="text-align:right">Giá chuyển</td>
+                                    </tr>
+                                    <tr>
+                                        <td style="text-align:right">{STT}</td>
+                                        <td>{Ma_Hang}</td>
+                                        <td>{Ten_Hang_Hoa}</td>
+                                        <td style="text-align:right">{So_Luong_Chuyen}</td>
+                                        <td style="text-align:right">{So_Luong_Nhan}</td>
+                                        <td style="text-align:right">{Gia_Chuyen}</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                            
+                            <table class="mb20" style="width:100%">
+                                <tbody>
+                                    <tr>
+                                        <td>Ghi chú chi nhánh chuyển: {Ghi_Chu_Chi_Nhanh_Chuyen}</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Ghi chú chi nhánh nhận: {Ghi_Chu_Chi_Nhanh_Nhan}</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                            
+                            <table style="width:100%">
+                                <tbody>
+                                    <tr>
+                                        <td align="center" width="50%"><strong>Người chuyển</strong></td>
+                                        <td align="center" width="50%"><strong>Người nhận</strong></td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                            </div>
+                        </div>                            
+                    </textarea>
+                </div>
+                <div class="col-md-6">
+                    <div id="display_phieu_chuyen_hang"></div>
+                </div>
+            </div>
+        </div>
+        <div id="phieu-chi" class="tab-pane fade">
+            <div class="row">
+                <div class="col-md-6">
+                    <textarea id="editor_phieu_chi" name="editor_phieu_chi">
+                        <div id="kv-cke-temp">
+                            <style type="text/css">.printBox {
+                                    font-family:Arial, sans-serif;
+                                    font-size: 12px;
+                                    color: \#000;
+                                }
+                            
+                                .fs18 {
+                                    font-size: 18px;
+                                }
+                            
+                                .mb25 {
+                                    margin-bottom: 25px;
+                                }
+                            
+                                .mb10 {
+                                    margin-bottom: 10px;
+                                }
+                            
+                                .mb5 {
+                                    margin-bottom: 5px;
+                                }
+                                table {
+                                    page-break-inside: auto
+                                }
+                            
+                                tr {
+                                    page-break-inside: avoid;
+                                    page-break-after: auto
+                                }
+                            </style>
+                            <div class="printBox">
+                            <div class="mb25"><span style="font-size:small">{Chi_Nhanh_Ban_Hang}</span><br />
+                            <span style="font-size:small">SĐT: </span><span style="background-color:#ffffff; color:#213140; font-size:small; line-height:22px">{Dien_Thoai_Chi_Nhanh}</span><br />
+                            <span style="font-size:small">Địa chỉ:&nbsp;{Dia_Chi_Chi_Nhanh}</span></div>
+                            
+                            <div class="mb10" style="text-align:center"><strong class="fs18"><span style="font-size:large">PHIẾU CHI</span></strong></div>
+                            
+                            <div class="mb5" style="text-align:center"><strong><span style="font-size:small">Mã phiếu chi: {Ma_Phieu}</span></strong></div>
+                            
+                            <div class="mb25" style="text-align:center"><em><span style="font-size:small">Ngày:&nbsp;</span></em><span style="background-color:#ffffff; color:#213140; font-size:small; line-height:22px"><em>{Ngay_Thang_Nam}</em></span></div>
+                            
+                            <table style="width:100%">
+                                <tbody>
+                                    <tr>
+                                        <td colspan="2">
+                                        <table style="width:100%">
+                                            <tbody>
+                                                <tr>
+                                                    <td width="24%"><span style="font-size:small">Họ tên người nhận tiền:</span></td>
+                                                    <td style="border-bottom:1px dotted \#000000">{Doi_Tac}</td>
+                                                </tr>
+                                            </tbody>
+                                        </table>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td colspan="2">
+                                        <table style="width:100%">
+                                            <tbody>
+                                                <tr>
+                                                    <td style="white-space:nowrap" width="24%"><span style="font-size:small">Số điện thoại:</span></td>
+                                                    <td style="border-bottom:1px dotted \#000000">{So_Dien_Thoai}</td>
+                                                </tr>
+                                            </tbody>
+                                        </table>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td colspan="2">
+                                        <table style="width:100%">
+                                            <tbody>
+                                                <tr>
+                                                    <td style="white-space:nowrap" width="24%"><span style="font-size:small">Địa chỉ:</span></td>
+                                                    <td style="border-bottom:1px dotted \#000000">{Dia_Chi}</td>
+                                                </tr>
+                                            </tbody>
+                                        </table>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td colspan="2">
+                                        <table style="width:100%">
+                                            <tbody>
+                                                <tr>
+                                                    <td style="white-space:nowrap" width="24%"><span style="font-size:small">Lý do nhận:</span></td>
+                                                    <td style="border-bottom:1px dotted \#000000">{Ly_Do}</td>
+                                                </tr>
+                                            </tbody>
+                                        </table>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td colspan="2" height="20">&nbsp;</td>
+                                    </tr>
+                                    <tr>
+                                        <td><span style="font-size:small">Số tiền: </span><strong><span style="font-size:small">{Gia_Tri_Phieu}</span></strong></td>
+                                    </tr>
+                                    <tr>
+                                        <td>
+                                        <p><span style="font-size:small">Bằng chữ: </span><span style="background-color:#ffffff; color:#213140; font-size:small; line-height:22px">{Gia_Tri_Bang_Chu}</span><em>&nbsp;</em></p>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td colspan="2" height="10">&nbsp;</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                            
+                            <div class="mb10" style="text-align:right"><span style="font-size:small">Ngày .......... Tháng .......... Năm ...............</span></div>
+                            
+                            <table style="width:100%">
+                                <tbody>
+                                    <tr>
+                                        <td align="center" width="33%"><strong><span style="font-size:small">Người lập phiếu</span></strong></td>
+                                        <td align="center" width="33%"><strong><span style="font-size:small">Người nhận</span></strong></td>
+                                        <td align="center" width="33%"><strong><span style="font-size:small">Thủ quỹ</span></strong></td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                            </div>
+                        </div>                            
+                    </textarea>
+                </div>
+                <div class="col-md-6">
+                    <div id="display_phieu_chi"></div>
+                </div>
+            </div>
+        </div>
+        <div id="phieu-thu" class="tab-pane fade">
+            <div class="row">
+                <div class="col-md-6">
+                    <textarea id="editor_phieu_thu" name="editor_phieu_thu">
+                        <div id="kv-cke-temp">
+                            <style type="text/css">.printBox * {
+                                    color: \#000;
+                                }
+                                table {
+                                    page-break-inside: auto
+                                }
+                            
+                                tr {
+                                    page-break-inside: avoid;
+                                    page-break-after: auto
+                                }
+                            
+                                .fs18 {
+                                    font-size: 18px;
+                                }
+                            
+                                .mb25 {
+                                    margin-bottom: 25px;
+                                }
+                            
+                                .mb10 {
+                                    margin-bottom: 10px;
+                                }
+                            
+                                .mb5 {
+                                    margin-bottom: 5px;
+                                }
+                            </style>
+                            <div class="printBox">
+                            <div class="mb25"><span style="font-size:small">{Chi_Nhanh_Ban_Hang}</span><br />
+                            <span style="font-size:small">SĐT: </span><span style="background-color:#ffffff; color:#213140; font-size:small; line-height:22px">{Dien_Thoai_Chi_Nhanh}</span><br />
+                            <span style="font-size:small">Địa chỉ:&nbsp;{Dia_Chi_Chi_Nhanh}</span></div>
+                            
+                            <div class="mb10" style="text-align:center"><strong class="fs18"><span style="font-size:large">PHIẾU THU</span></strong></div>
+                            
+                            <div class="mb5" style="text-align:center"><strong><span style="font-size:small">Mã phiếu thu: {Ma_Phieu}</span></strong></div>
+                            
+                            <div class="mb25" style="text-align:center"><em><span style="font-size:small">Ngày:&nbsp;</span></em><span style="background-color:#ffffff; color:#213140; font-size:small; line-height:22px"><em>{Ngay_Thang_Nam}</em></span></div>
+                            
+                            <table style="width:100%">
+                                <tbody>
+                                    <tr>
+                                        <td colspan="2">
+                                        <table style="width:100%">
+                                            <tbody>
+                                                <tr>
+                                                    <td width="24%"><span style="font-size:small">Họ tên người nộp tiền:</span></td>
+                                                    <td style="border-bottom:1px dotted \#000000">{Doi_Tac}</td>
+                                                </tr>
+                                            </tbody>
+                                        </table>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td colspan="2">
+                                        <table style="width:100%">
+                                            <tbody>
+                                                <tr>
+                                                    <td style="white-space:nowrap" width="24%"><span style="font-size:small">Số điện thoại:</span></td>
+                                                    <td style="border-bottom:1px dotted \#000000">{So_Dien_Thoai}</td>
+                                                </tr>
+                                            </tbody>
+                                        </table>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td colspan="2">
+                                        <table style="width:100%">
+                                            <tbody>
+                                                <tr>
+                                                    <td style="white-space:nowrap" width="24%"><span style="font-size:small">Địa chỉ:</span></td>
+                                                    <td style="border-bottom:1px dotted \#000000">{Dia_Chi}</td>
+                                                </tr>
+                                            </tbody>
+                                        </table>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td colspan="2">
+                                        <table style="width:100%">
+                                            <tbody>
+                                                <tr>
+                                                    <td style="white-space:nowrap" width="24%"><span style="font-size:small">Lý do nộp:</span></td>
+                                                    <td style="border-bottom:1px dotted \#000000">{Ly_Do}</td>
+                                                </tr>
+                                            </tbody>
+                                        </table>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td colspan="2" height="20">&nbsp;</td>
+                                    </tr>
+                                    <tr>
+                                        <td><span style="font-size:small">Số tiền: </span><strong><span style="font-size:small">{Gia_Tri_Phieu}</span></strong></td>
+                                    </tr>
+                                    <tr>
+                                        <td>
+                                        <p><span style="font-size:small">Bằng chữ: </span><span style="background-color:#ffffff; color:#213140; font-size:small; line-height:22px">{Gia_Tri_Bang_Chu}</span><em>&nbsp;</em></p>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td colspan="2" height="10">&nbsp;</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                            
+                            <div class="mb10" style="text-align:right"><span style="font-size:small">Ngày .......... Tháng .......... Năm ...............</span></div>
+                            
+                            <table style="width:100%">
+                                <tbody>
+                                    <tr>
+                                        <td align="center" width="33%"><strong><span style="font-size:small">Người lập phiếu</span></strong></td>
+                                        <td align="center" width="33%"><strong><span style="font-size:small">Người nộp</span></strong></td>
+                                        <td align="center" width="33%"><strong><span style="font-size:small">Thủ quỹ</span></strong></td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                            </div>
+                        </div>                            
+                    </textarea>
+                </div>
+                <div class="col-md-6">
+                    <div id="display_phieu_thu"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+  </div>
+
+  <script>
+    CKEDITOR.plugins.addExternal( 'justify', 'plugins/justify/', 'plugin.js' );
+    CKEDITOR.replace('editor_hoa_don_ban_hang', {
+    extraPlugins: 'justify',
+    on: {
+        instanceReady: function (evt) {
+        previewContent();
+        CKEDITOR.instances.editor_hoa_don_ban_hang.on('change', function() {
+            previewContent();
+        });
+        }
+    },
+    });
+
+    function previewContent() {
+        var editorContent = CKEDITOR.instances.editor_hoa_don_ban_hang.getData();
+        var replacedContent = replaceVariables(editorContent);
+        $('#display').html(replacedContent);
+    }
+
+    CKEDITOR.replace('editor_phieu_giao_hang', {
+    extraPlugins: 'justify',
+    on: {
+        instanceReady: function (evt) {
+            previewContentPhieuGiaoHang();
+        CKEDITOR.instances.editor_phieu_giao_hang.on('change', function() {
+            previewContentPhieuGiaoHang();
+        });
+        }
+    },
+    });
+
+    function previewContentPhieuGiaoHang() {
+        var editorContent = CKEDITOR.instances.editor_phieu_giao_hang.getData();
+        var replacedContentABCD = replaceVariablesDeliveryNotes(editorContent);
+        $('#display_phieu_giao_hang').html(replacedContentABCD);
+    }
+
+    CKEDITOR.replace('editor_hoa_don_tra_hang', {
+    extraPlugins: 'justify',
+    on: {
+        instanceReady: function (evt) {
+        previewContentBillReturn();
+        CKEDITOR.instances.editor_hoa_don_tra_hang.on('change', function() {
+            previewContentBillReturn();
+        });
+        }
+    },
+    });
+
+    function previewContentBillReturn() {
+        var editorContent = CKEDITOR.instances.editor_hoa_don_tra_hang.getData();
+        var replacedContentBillReturn = replaceVariablesReturnBill(editorContent);
+        $('#display_hoa_don_tra_hang').html(replacedContentBillReturn);
+    }
+
+    CKEDITOR.replace('editor_hoa_don_doi_tra_hang', {
+    extraPlugins: 'justify',
+    on: {
+        instanceReady: function (evt) {
+        previewContentHoaDonDoiTraHang();
+        CKEDITOR.instances.editor_hoa_don_doi_tra_hang.on('change', function() {
+            previewContentHoaDonDoiTraHang();
+        });
+        }
+    },
+    });
+
+    function previewContentHoaDonDoiTraHang() {
+        var editorContent = CKEDITOR.instances.editor_hoa_don_doi_tra_hang.getData();
+        var replacedContent = replaceVariablesHoaDonDoiTraHang(editorContent);
+        $('#display_hoa_don_doi_tra_hang').html(replacedContent);
+    }
+
+    
+    CKEDITOR.replace('editor_phieu_nhap_hang', {
+    extraPlugins: 'justify',
+    on: {
+        instanceReady: function (evt) {
+        previewContentPhieuNhapHang();
+        CKEDITOR.instances.editor_phieu_nhap_hang.on('change', function() {
+            previewContentPhieuNhapHang();
+        });
+        }
+    },
+    });
+
+    function previewContentPhieuNhapHang() {
+        var editorContent = CKEDITOR.instances.editor_phieu_nhap_hang.getData();
+        var replacedContentPhieuNhapHang = replaceVariablesPhieuNhapHang(editorContent);
+        $('#display_phieu_nhap_hang').html(replacedContentPhieuNhapHang);
+    }
+
+    CKEDITOR.replace('editor_tra_hang_nhap', {
+    extraPlugins: 'justify',
+    on: {
+        instanceReady: function (evt) {
+        previewContentTraHangNhap();
+        CKEDITOR.instances.editor_tra_hang_nhap.on('change', function() {
+            previewContentTraHangNhap();
+        });
+        }
+    },
+    });
+
+    function previewContentTraHangNhap() {
+        var editorContent = CKEDITOR.instances.editor_tra_hang_nhap.getData();
+        var replacedContentTraHangNhap = replaceVariablesTraHangNhap(editorContent);
+        $('#display_tra_hang_nhap').html(replacedContentTraHangNhap);
+    }
+
+    CKEDITOR.replace('editor_phieu_chuyen_hang', {
+    extraPlugins: 'justify',
+    on: {
+        instanceReady: function (evt) {
+        previewContentPhieuChuyenHang();
+        CKEDITOR.instances.editor_phieu_chuyen_hang.on('change', function() {
+            previewContentPhieuChuyenHang();
+        });
+        }
+    },
+    });
+
+    function previewContentPhieuChuyenHang() {
+        var editorContent = CKEDITOR.instances.editor_phieu_chuyen_hang.getData();
+        var replacedContentPhieuChuyenHang = replaceVariablesPhieuChuyenHang(editorContent);
+        $('#display_phieu_chuyen_hang').html(replacedContentPhieuChuyenHang);
+    }
+
+    CKEDITOR.replace('editor_phieu_chi', {
+    extraPlugins: 'justify',
+    on: {
+        instanceReady: function (evt) {
+        previewContentPhieuChi();
+        CKEDITOR.instances.editor_phieu_chi.on('change', function() {
+            previewContentPhieuChi();
+        });
+        }
+    },
+    });
+
+    function previewContentPhieuChi() {
+        var editorContent = CKEDITOR.instances.editor_phieu_chi.getData();
+        var replacedContentPhieuChi = replaceVariablesPhieuChi(editorContent);
+        $('#display_phieu_chi').html(replacedContentPhieuChi);
+    }
+
+    CKEDITOR.replace('editor_phieu_thu', {
+    extraPlugins: 'justify',
+    on: {
+        instanceReady: function (evt) {
+        previewContentPhieuThu();
+        CKEDITOR.instances.editor_phieu_thu.on('change', function() {
+            previewContentPhieuThu();
+        });
+        }
+    },
+    });
+
+    function previewContentPhieuThu() {
+        var editorContent = CKEDITOR.instances.editor_phieu_thu.getData();
+        var replacedContentPhieuThu = replaceVariablesPhieuThu(editorContent);
+        $('#display_phieu_thu').html(replacedContentPhieuThu);
+    }
+
+    function replaceVariables(content) {
+      var variables = {
+        "{Logo_Cua_Hang}": "<img src='images/logo.png'>",
+        "{Ten_Cua_Hang}": "Đồng hồ Tissot Thành Tâm",
+        "{Dien_Thoai_Chi_Nhanh}": "0333950268",
+        "{Dia_Chi_Chi_Nhanh}": "68 ",
+        "{Phuong_Xa_Chi_Nhanh}": "Huỳnh Thiện Lộc",
+        "{Khu_Vuc_Chi_Nhanh_QH_TP}": "phường 11 quận Tân Bình thành phố Hồ Chí Minh",
+        "{HOA_DON_BAN_HANG}": "HÓA ĐƠN BÁN HÀNG",
+        "{Ma_Don_Hang}": "Số HĐ: HD003368",
+        "{Ngay}": "05",
+        "{Thang}": "10",
+        "{Nam}": "2023",
+        "{Khach_Hang}": "chị Nhiên quận 2",
+        "{So_Dien_Thoai}": "0666888999",
+        "{Dia_Chi_Khach_Hang}": "số 39 đường Thảo Điền",
+        "{Phuong_Xa_Khach_Hang}": "phường 8",
+        "{Khu_Vuc_Khach_Hang_QH_TP}": "quận 2 thành phố Hồ Chí Minh",
+        "{Ten_Hang_Hoa}": "Đồng Hồ Tissot T-Classic Nữ T122.207.22.033.00 Dây Thép Không Gỉ 30 mm",
+        "{Don_Gia_Chiet_Khau}": "10%",
+        "{So_Luong}": "1",
+        "{Thanh_Tien}": "24.500.000đ",
+        "{Tong_Tien_Hang}": "24.500.000đ",
+        "{Chiet_Khau_Hoa_Don_Phan_Tram}": "10%",
+        "{Chiet_Khau_Hoa_Don}": "2.450.000đ",
+        "{Tong_Cong}": "22.050.000đ",
+        "{Tong_Cong_Bang_Chu}": "hai mươi hai triệu không trăm năm mươi nghìn đồng",
+        "{Ma_QR}": "<img src='https://chart.googleapis.com/chart?cht=qr&chl=example.com&chs=300x300' alt='QR Code'>",
+      };
+
+      for (var variable in variables) {
+        if (variables.hasOwnProperty(variable)) {
+          var value = variables[variable];
+          content = content.replace(new RegExp(variable, "g"), value);
+        }
+      }
+
+      return content;
+    }
+
+    function replaceVariablesDeliveryNotes(content) {
+      var variables = {
+        "{Logo_Cua_Hang}": "<img src='images/logo.png'>",
+        "{Ma_Don_Hang}": "Số HĐ: HD003368",
+        "{Ma_Van_Don_Ma_Vach}": "<img src='images/mavandon.png'>",
+        "{Ma_Van_Don}": "11223355888",
+        "{Sort_Code}": "00-00-00/28",
+        "{Doi_Tac_Giao_Hang}": "JEXPRESS",
+        "{Loai_Dich_Vu}": "Chuyển hàng cấp tốc",
+        "{Ten_Cua_Hang}": "Đồng hồ Tissot Thành Tâm",
+        "{Dien_Thoai_Chi_Nhanh}": "0333950888",
+        "{Dia_Chi_Chi_Nhanh}": "68 Huỳnh Thiệc Lộc",
+        "{Phuong_Xa_Chi_Nhanh}": "phường 11",
+        "{Khu_Vuc_Chi_Nhanh_QH_TP}": "quận Tân Phú, thành phố Hồ Chí Minh",
+        "{Khach_Hang}": "chị Nhiên quận 2",
+        "{So_Dien_Thoai}": "0666888999",
+        "{Dia_Chi_Giao_Hang}": "số 39 đường Thảo Điền",
+        "{Phuong_Xa_Giao_Hang}": "phường 8",
+        "{Khu_Vuc_Giao_Hang_QH_TP}": "quận 2 thành phố Hồ Chí Minh",
+        "{Thu_Tu_Nguoi_Nhan}": "22.450.000",
+        "{Luu_Y_Khi_Phat}": "Cho xem nhưng không thử",
+        "{Ghi_Chu_Giao_Hang}": "Hàng dễ vở xin nhẹ tay",
+        "{Trong_Luong_Giao_Hang}": "20g",
+        "{Tong_So_Luong}": "1",
+        "{STT}": "1",
+        "{Ten_Hang_Hoa}": "Đồng Hồ Tissot T-Classic Nữ T122.207.22.033.00 Dây Thép Không Gỉ 30 mm",
+        "{So_Luong}": "1",
+      };
+
+      for (var variable in variables) {
+        if (variables.hasOwnProperty(variable)) {
+          var value = variables[variable];
+          content = content.replace(new RegExp(variable, "g"), value);
+        }
+      }
+
+      return content;
+    } 
+    
+    function replaceVariablesReturnBill(content) {
+      var variables = {
+        "{Dia_Chi_Chi_Nhanh}": "68 ",
+        "{Phuong_Xa_Chi_Nhanh}": "Huỳnh Thiện Lộc",
+        "{Khu_Vuc_Chi_Nhanh_QH_TP}": "phường 11 quận Tân Bình thành phố Hồ Chí Minh",
+        "{Dien_Thoai_Chi_Nhanh}": "0333950268",
+        "{Ngay}": "05",
+        "{Thang}": "10",
+        "{Nam}": "2023",
+        "{HOA_DON_TRA_HANG}": "HÓA ĐƠN TRẢ HÀNG",
+        "{Khach_Hang}": "chị Nhiên quận 2",
+        "{So_Dien_Thoai}": "0666888999",
+        "{Dia_Chi_Khach_Hang}": "số 39 đường Thảo Điền",
+        "{Phuong_Xa_Khach_Hang}": "phường 8",
+        "{Khu_Vuc_Khach_Hang_QH_TP}": "quận 2 thành phố Hồ Chí Minh",
+        "{Nhan_Vien_Ban_Hang}": "Lê Công Tuấn Anh",
+        "{Ten_Hang_Hoa}": "Đồng Hồ Tissot T-Classic Nữ T122.207.22.033.00 Dây Thép Không Gỉ 30 mm",
+        "{So_Luong}": "1",
+        "{Don_Gia}": "24.500.000đ",
+        "{Thanh_Tien}": "24.500.000đ",
+        "{Ghi_Chu}": "Ghi Chú",
+        "{Tong_Tien_Tra_Hang}": "24.500.000đ",
+        "{Tien_Tra_Khach}": "24.500.000đ",
+      };
+
+      for (var variable in variables) {
+        if (variables.hasOwnProperty(variable)) {
+          var value = variables[variable];
+          content = content.replace(new RegExp(variable, "g"), value);
+        }
+      }
+
+      return content;
+    } 
+
+    function replaceVariablesHoaDonDoiTraHang(content) {
+      var variables = {
+        "{Chi_Nhanh_Ban_Hang}": "quận Tân Phú",
+        "{Dien_Thoai_Chi_Nhanh}": "0333950268",
+        "{Ngay_Thang_Nam}": "05/10/2023 18:50",
+        "{Khach_Hang}": "chị Nhiên quận 2",
+        "{Dia_Chi_Khach_Hang}": "số 39 đường Thảo Điền",
+        "{Khu_Vuc_Khach_Hang}": "Hồ Chí Minh, quận 2",
+        "{Nhan_Vien_Ban_Hang}": "Lê Công Tuấn Anh",
+        "{Ten_Hang_Hoa}": "Đồng Hồ Tissot T-Classic Nữ T122.207.22.033.00 Dây Thép Không Gỉ 30 mm",
+        "{So_Luong}": "1",
+        "{Don_Gia}": "24.500.000đ",
+        "{Thanh_Tien}": "24.500.000đ",
+        "{Ten_Hang_Hoa_Moi}": "Đồng Hồ Tissot T-Lady Nữ T126.010.36.013.00 Dây Da 26 mm",
+        "{So_Luong_Moi}": "1",
+        "{Don_Gia_Moi}": "12.950.000đ",
+        "{Thanh_Tien_Moi}": "12.950.000đ",
+        "{Ghi_Chu}": "Ghi chú",
+        "{Tong_Tien_Tra_Hang}": "24.500.000đ",
+        "{Tong_Tien_Hoa_Don_Mua}": "12.950.000đ",
+        "{Tong_Cong}": "11.550.000đ",
+        "{Tien_Tra_Khach}": "11.550.000đ",
+        "{Ma_QR}": "<img src='https://chart.googleapis.com/chart?cht=qr&chl=example.com&chs=300x300' alt='QR Code'>",
+      };
+
+      for (var variable in variables) {
+        if (variables.hasOwnProperty(variable)) {
+          var value = variables[variable];
+          content = content.replace(new RegExp(variable, "g"), value);
+        }
+      }
+
+      return content;
+    } 
+
+    function replaceVariablesPhieuNhapHang(content) {
+      var variables = {
+        "{Ma_Nhap_Hang}": "CN88899977888",
+        "{Ngay_Thang_Nam}": "05/10/2023 18:50",
+        "{Chi_Nhanh_Nhap}": "Chi nhánh trung tâm",
+        "{Nguoi_Tao}": "Lê Công Tuấn Anh",
+        "{Nha_Cung_Cap}": "Tissot Việt Nam",
+        "{Dia_Chi_Nha_Cung_Cap}": "2 Lê Duẩn",
+        "{STT}": "1",
+        "{Ma_Hang}": "TS700098",
+        "{Ten_Hang_Hoa}": "Đồng Hồ Tissot T-Classic Nữ T122.207.22.033.00 Dây Thép Không Gỉ 30 mm",
+        "{So_Luong}": "1",
+        "{Don_Gia}": "24.500.000đ",
+        "{Chiet_Khau}": "750.000đ",
+        "{Thanh_Tien}": "24.500.000đ",
+        "{Tong_So_Luong_Hang}": "1",
+        "{Tong_Tien_Hang}": "23.750.000đ",
+        "{Chiet_Khau_Hoa_Don}": "750.000đ",
+        "{Muc_Chi_Phi_Nhap_Hang}": "750.000đ",
+        "{Tong_Cong}": "22.250.000đ",
+        "{Muc_Chi_Phi_Nhap_Hang_Khac}": "150.000đ",
+        "{Ghi_Chu}": "Ghi chú",
+      };
+
+      for (var variable in variables) {
+        if (variables.hasOwnProperty(variable)) {
+          var value = variables[variable];
+          content = content.replace(new RegExp(variable, "g"), value);
+        }
+      }
+
+      return content;
+    } 
+
+    function replaceVariablesTraHangNhap(content) {
+      var variables = {
+        "{Ma_Tra_Hang_Nhap}": "TS567898989",
+        "{Ma_Nhap_Hang}": "TY9090898989",
+        "{Ngay_Thang_Nam}": "05/10/2023 18:50",
+        "{Dia_Chi_Chi_Nhanh}": "68 ",
+        "{Nguoi_Tao}": "Lê Công Tuấn Anh",
+        "{Nha_Cung_Cap}": "Tissot Việt Nam",
+        "{Dia_Chi_Nha_Cung_Cap}": "2 Lê Duẩn",
+        "{STT}": "1",
+        "{Ma_Hang}": "TS700098",
+        "{Ten_Hang_Hoa}": "Đồng Hồ Tissot T-Classic Nữ T122.207.22.033.00 Dây Thép Không Gỉ 30 mm",
+        "{So_Luong}": "1",
+        "{Gia_Nhap}": "24.500.000đ",
+        "{Don_Gia_Chiet_Khau}": "500.000đ",
+        "{Giam_Gia_Tra_Lai}": "2.500.000đ",
+        "{Thanh_Tien}": "21.500.000đ",
+        "{Ghi_Chu}": "Ghi chú",
+        "{Tong_So_Luong}": "1",
+        "{Tong_So_Mat_Hang}": "1",
+        "{Tong_Tien_Hang_Tra}": "21.500.000đ",
+        "{Giam_Gia}": "3.000.000đ",
+        "{Tien_Nha_Cung_Cap_Tra}": "3.000.000đ",
+      };
+
+      for (var variable in variables) {
+        if (variables.hasOwnProperty(variable)) {
+          var value = variables[variable];
+          content = content.replace(new RegExp(variable, "g"), value);
+        }
+      }
+
+      return content;
+    }
+    
+    function replaceVariablesPhieuChuyenHang(content) {
+      var variables = {
+        "{Ten_Cua_Hang}": "Đồng hồ Tissot Thành Tâm",
+        "{Dia_Chi_Cua_Hang}": "68 Huỳnh Thiện Lộc thành phố Hồ Chí Minh",
+        "{So_Dien_Thoai_Cua_Hang}": "03339898989",
+        "{Ma_Chuyen_Hang}": "TN0687889",
+        "{Ngay_Thang_Nam_Chuyen}": "06/10/2023 18:30",
+        "{Chi_Nhanh_Chuyen}": "chi nhánh Tân Bình",
+        "{Nguoi_Chuyen}": "thủ kho chi nhánh Tân Bình",
+        "{Chi_Nhanh_Nhan}": "chi nhánh Hà Nội",
+        "{Nguoi_Nhan}": "thủ kho chi nhánh Hà Nội",
+        "{STT}": "1",
+        "{Ma_Hang}": "TS700098",
+        "{Ten_Hang_Hoa}": "Đồng Hồ Tissot T-Classic Nữ T122.207.22.033.00 Dây Thép Không Gỉ 30 mm",
+        "{So_Luong_Chuyen}": "1",
+        "{So_Luong_Nhan}": "1",
+        "{Gia_Chuyen}": "80.000đ",
+        "{Ghi_Chu_Chi_Nhanh_Chuyen}": "ghi chú chi nhánh Hồ Chí Minh",
+        "{Ghi_Chu_Chi_Nhanh_Nhan}": "ghi chú chi nhánh Hà Nội",
+      };
+
+      for (var variable in variables) {
+        if (variables.hasOwnProperty(variable)) {
+          var value = variables[variable];
+          content = content.replace(new RegExp(variable, "g"), value);
+        }
+      }
+
+      return content;
+    }
+
+    function replaceVariablesPhieuChi(content) {
+      var variables = {
+        "{Chi_Nhanh_Ban_Hang}": "quận Tân Phú",
+        "{Dien_Thoai_Chi_Nhanh}": "0333950268",
+        "{Dia_Chi_Chi_Nhanh}": "68 ",
+        "{Ma_Phieu}": "TN0687889",
+        "{Ngay_Thang_Nam}": "06/10/2023 18:30",
+        "{Doi_Tac}": "chị Nhiên quận 2",
+        "{So_Dien_Thoai}": "03339898989",
+        "{Dia_Chi}": "số 39 đường Thảo Điền quận 2 thành phố Hồ Chí Minh",
+        "{Ly_Do}": "Chi tiền",
+        "{Gia_Tri_Phieu}": "10.000đ",
+        "{Gia_Tri_Bang_Chu}": "10 nghìn đồng chẵn",
+      };
+
+      for (var variable in variables) {
+        if (variables.hasOwnProperty(variable)) {
+          var value = variables[variable];
+          content = content.replace(new RegExp(variable, "g"), value);
+        }
+      }
+
+      return content;
+    }
+
+    function replaceVariablesPhieuThu(content) {
+      var variables = {
+        "{Chi_Nhanh_Ban_Hang}": "quận Tân Phú",
+        "{Dien_Thoai_Chi_Nhanh}": "0333950268",
+        "{Dia_Chi_Chi_Nhanh}": "68 ",
+        "{Ma_Phieu}": "TN0687889",
+        "{Ngay_Thang_Nam}": "06/10/2023 18:30",
+        "{Doi_Tac}": "chị Nhiên quận 2",
+        "{So_Dien_Thoai}": "03339898989",
+        "{Dia_Chi}": "số 39 đường Thảo Điền quận 2 thành phố Hồ Chí Minh",
+        "{Ly_Do}": "Thu tiền",
+        "{Gia_Tri_Phieu}": "10.000đ",
+        "{Gia_Tri_Bang_Chu}": "10 nghìn đồng chẵn",
+      };
+
+      for (var variable in variables) {
+        if (variables.hasOwnProperty(variable)) {
+          var value = variables[variable];
+          content = content.replace(new RegExp(variable, "g"), value);
+        }
+      }
+
+      return content;
+    }
+
+    </script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/5.3.0/js/bootstrap.bundle.min.js"></script>
+    <script>
+      $(document).ready(function() {
+        // Initialize Bootstrap tabs
+        var tabTriggerEl = document.getElementById('hoa-don-ban-hang');
+        var tab = new bootstrap.Tab(tabTriggerEl);
+        tab.show();
+      });
+    </script>
+  <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+  <!-- <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.2/js/bootstrap.min.js"></script> -->
+</body>
+</html>
